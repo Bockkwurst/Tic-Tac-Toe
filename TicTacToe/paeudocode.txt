@@ -1,0 +1,65 @@
+Funktion Main():
+    Initialisiere einen Scanner namens "scanner" für Benutzereingaben
+    Initialisiere ein zweidimensionales char-Array "board" für das Spielfeld
+    Fordere den Benutzer auf, den Namen von Spieler 1 einzugeben und speichere ihn in "playerOneName"
+    Fordere den Benutzer auf, den Namen von Spieler 2 einzugeben und speichere ihn in "playerTwoName"
+
+    Solange wahr:
+        Zeige das Spielfeld an
+        SpielerOneMove(board, scanner, 'X', playerOneName)
+
+        Wenn isGameFinished(board, playerOneName, playerTwoName) ist wahr, dann breche ab
+
+        Zeige das Spielfeld an
+        SpielerTwoMove(board, scanner, 'O', playerTwoName)
+
+        Wenn isGameFinished(board, playerOneName, playerTwoName) ist wahr, dann breche ab
+
+    Schließe den Scanner
+
+Funktion printBoard(board):
+    Zeige das Spielfeld in der Konsole an
+
+Funktion SpielerOneMove(board, scanner, symbol, playerOneName):
+    Solange wahr:
+        Fordere Spieler 1 auf, einen Zug zu machen
+        Lies die Benutzereingabe in "userInput"
+        Wenn isValidMove(board, userInput) ist wahr:
+            Breche die Schleife ab
+        Andernfalls:
+            Zeige eine Fehlermeldung
+
+    Platziere den Spielstein "X" auf dem Spielfeld an der ausgewählten Position
+
+Funktion SpielerTwoMove(board, scanner, symbol, playerTwoName):
+    Solange wahr:
+        Fordere Spieler 2 auf, einen Zug zu machen
+        Lies die Benutzereingabe in "userInput"
+        Wenn isValidMove(board, userInput) ist wahr:
+            Breche die Schleife ab
+        Andernfalls:
+            Zeige eine Fehlermeldung
+
+    Platziere den Spielstein "O" auf dem Spielfeld an der ausgewählten Position
+
+Funktion placeMove(board, position, symbol):
+    Verwende eine Schleife oder einen Switch-Case, um das Symbol an der ausgewählten Position im Spielfeld zu platzieren
+
+Funktion isValidMove(board, position):
+    Überprüfe, ob die ausgewählte Position auf dem Spielfeld leer ist, und gib entsprechend true oder false zurück
+
+Funktion isGameFinished(board, playerOneName, playerTwoName):
+    Wenn ein Spieler mit "X" gewinnt:
+        Zeige das Spielfeld an
+        Gib aus, dass Spieler 1 (playerOneName) gewonnen hat
+        Gib true zurück
+
+    Wenn ein Spieler mit "O" gewinnt:
+        Zeige das Spielfeld an
+        Gib aus, dass Spieler 2 (playerTwoName) gewonnen hat
+        Gib true zurück
+
+    Sonst gib false zurück
+
+Funktion wins(board, symbol):
+    Überprüfe alle möglichen Gewinnkombinationen auf dem Spielfeld und gib true zurück, wenn ein Spieler mit dem gegebenen Symbol gewinnt. Andernfalls gib false zurück
